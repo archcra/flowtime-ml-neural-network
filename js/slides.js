@@ -9,6 +9,9 @@ var slidePages = [
     "slides/c00/s30-foreword.html",
     "slides/c00/s40-foreword.html",
     "slides/c00/s42-foreword.html",
+    "slides/c00/s45-foreword.html",
+    "slides/c00/s48-foreword.html",
+
     "slides/c00/s50-overview.html"
   ],
   ["slides/c10/s10-what.html",
