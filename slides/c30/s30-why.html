@@ -1,0 +1,32 @@
+<h1>
+  <a href="http://www.holehouse.org/mlclass/08_Neural_Networks_Representation.html" target="_blank"> Neural networks - notation </a></h1>
+<pre style="font-size: 0.8em; margin-top: -2em;"> Here, input is x1, x2 and x3
+  ai(j) - activation of unit i in layer j
+
+  So, a12 - is the activation of the 1st unit in the second layer
+  By activation, we mean the value which is computed and output by that node
+
+Ɵ(j) - matrix of parameters controlling the function mapping from layer j to
+     layer j + 1
+  Parameters for controlling mapping from one layer to the next
+  If network has
+      sj units in layer j and
+      sj+1 units in layer j + 1
+      Then Ɵj will be of dimensions [sj+1 , sj + 1]
+          Because
+            sj+1 is equal to the number of units in layer (j + 1)
+            is equal to the number of units in layer j, plus an additional unit
+  Looking at the Ɵ matrix
+      Column length is the number of units in the following layer
+      Row length is the number of units in the current layer + 1 (because we have to map the bias unit)
+      So, if we had two layers - 101 and 21 units in each
+          Then Ɵj would be = [21 , 102]
+
+What are the computations which occur?
+
+  We have to calculate the activation for each node
+  That activation depends on
+      The input(s) to the node
+      The parameter associated with that node (from the Ɵ vector associated with that layer)
+</pre>
+<img width="45%" style="position:absolute;left:920px;top:160px;z-index: 100;opacity:1" src="../../images/c30/neural-network-notation.png">

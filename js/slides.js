@@ -19,6 +19,10 @@ var slidePages = [
   "slides/c10/s30-what.html"
   ],
   ["slides/c20/s10-what.html",
+  "slides/c20/s11-what.html",
+  "slides/c20/s12-what.html",
+  "slides/c20/s13-what.html",
+  "slides/c20/s14-what.html",
     "slides/c20/s20-what.html",
     "slides/c20/s30-what.html"
   ],
