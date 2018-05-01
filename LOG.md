@@ -1,5 +1,54 @@
 
 
+
+
+# 关于CNN
+
+https://www.tensorflow.org/api_docs/python/tf/layers/conv2d
+ if activation is not None, it is applied to the outputs as well.
+
+这个conv2d:
+# Convolutional Layer #1
+  conv1 = tf.layers.conv2d(
+      inputs=input_layer,
+      filters=32,
+      kernel_size=[3, 3],
+      padding="same",
+      activation=tf.nn.relu)
+
+      直接是带了ReLU的。
+
+tf.layers.conv2d(
+  filters: Integer, the dimensionality of the output space (i.e. the number of filters in the convolution).
+  kernel_size: An integer or tuple/list of 2 integers, specifying the height and width of the 2D convolution window. Can be a single integer to specify the same value for all spatial dimensions.
+
+
+
+这里说：
+https://stackoverflow.com/questions/36243536/what-is-the-number-of-filter-in-cnn
+
+The number of filters is the number of neurons
+
+过滤器的数目，就是神经元的数目，就是节点的数目；也是生成的filter map的数目，也是filter之后，features的数目。
+
+For instance, if you have 28x28 input images and a convolutional layer with 20 7x7 filters and stride 1, you will get 20 22x22 feature maps at the output of this layer. Note that this is presented to the next layer as a volume with width = height = 22 and depth = num_channels = 20.
+
+
+这里说：
+As for why popular choices are 32 or 64, my understanding is that these powers of 2 are more convenient choices for optimizing your GPU usage, which if I'm not mistaken is why AlexNet uses them.
+https://www.reddit.com/r/MachineLearning/comments/4itz4e/convolutional_neural_networks_number_of_filters/
+
+看来，选多少个filters，真是个难题。
+
+
+
+https://pdfs.semanticscholar.org/bbf7/b5bdc39f9b8849c639c11f4726e36915a0da.pdf
+
+
+
+# 其它
+
+
 AI
 机器学习 入门
 

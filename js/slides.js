@@ -5,7 +5,7 @@ var slideTitle = " Neural network introduction"; // Set the page title
 // 第二维的长度，是行的长度，即每列的行数，或者说每一栏的页数
 var slidePages = [
   ["slides/c00/s10-cover.html",
-  "slides/c00/s20-foreword.html",
+    "slides/c00/s20-foreword.html",
     "slides/c00/s30-foreword.html",
     "slides/c00/s40-foreword.html",
     "slides/c00/s42-foreword.html",
@@ -15,14 +15,14 @@ var slidePages = [
     "slides/c00/s50-overview.html"
   ],
   ["slides/c10/s10-what.html",
-  "slides/c10/s20-what.html",
-  "slides/c10/s30-what.html"
+    "slides/c10/s20-what.html",
+    "slides/c10/s30-what.html"
   ],
   ["slides/c20/s10-what.html",
-  "slides/c20/s11-what.html",
-  "slides/c20/s12-what.html",
-  "slides/c20/s13-what.html",
-  "slides/c20/s14-what.html",
+    "slides/c20/s11-what.html",
+    "slides/c20/s12-what.html",
+    "slides/c20/s13-what.html",
+    "slides/c20/s14-what.html",
     "slides/c20/s20-what.html",
     "slides/c20/s30-what.html"
   ],
@@ -56,9 +56,9 @@ var slidePages = [
     "slides/c60/s50-in-action.html",
     "slides/c60/s60-in-action.html",
     "slides/c60/s70-in-action.html",
-      "slides/c60/s80-in-action.html",
-        "slides/c60/s90-in-action.html",
-          "slides/c60/sa0-in-action.html"
+    "slides/c60/s80-in-action.html",
+    "slides/c60/s90-in-action.html",
+    "slides/c60/sa0-in-action.html"
   ],
   ["slides/c70/s10-summary.html"],
   ["slides/c80/s10-question.html",
@@ -67,8 +67,11 @@ var slidePages = [
     "slides/c80/s40-question.html",
     "slides/c80/s50-question.html",
     "slides/c80/s60-question.html",
-      "slides/c80/s70-question.html"
+    "slides/c80/s70-question.html",
+    "slides/c80/s80-question.html"
   ],
-  ["slides/c90/s10-references.html"],
+  ["slides/c90/s10-references.html",
+    "slides/c90/s20-references.html"
+  ],
   ["slides/ca0/s10-bye.html"]
 ];

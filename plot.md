@@ -1,7 +1,19 @@
 
 
+tensorboard
+backpropogation
+
+xor in tensorflow
+mnist in tensorflow
+
+gnt in tensorflow
+
+
+
+
+
 理论
-1. 大脑的研究 
+1. 大脑的研究
 
 With different tissue learning to see, maybe they all learn in the same way
 

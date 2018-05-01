@@ -1,0 +1,12 @@
+<h1>
+  <a href="https://mattmazur.com/2015/03/17/a-step-by-step-backpropagation-example/" target="_blank"> Neural networks - Step by step #4 </a></h1>
+
+<h2> Calculating the Total Error</h2>
+
+$$ E_{total} =  \sum \frac{1}{2} (target - output)^2 $$
+$$ E_{o1} =   \frac{1}{2} (target_{o1} - output_{o1})^2 =    \frac{1}{2} ( 0.01 -    0.75136507) = 0.274811083 $$
+$$ E_{o2} =  \frac{1}{2} (target_{o2} - output_{o2})^2 =    \frac{1}{2} ( 0.99 -    0.772928465) = 0.23560026 $$
+$$ E_{total} =  E_{o1} + E_{o2} = 0.274811083 + 0.23560026 = 0.298371109 $$
+<p>
+  目标就是一步步（训练或学习）来降低E<sub>total</sub>。通过修改权重(W)来降低E。如何修改W？
+</p>
