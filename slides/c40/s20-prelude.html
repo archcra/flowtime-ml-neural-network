@@ -1,0 +1,20 @@
+
+<a href="https://colab.research.google.com/drive/1u1Zv1_cUeU1qOBk6CPA78yBkqoIYv2bA" target="=_blank"> <h1  > XOR with tensorflow</h1></a>
+<p>
+  我们使用的高级API，就是tensorflow 的estimator。宏观上，使用它，分为4步：
+ 训练、检验、试用及实用。
+
+ 其中，实用就是导出后做为服务来应用。
+</p>
+
+<pre>
+  对于estomator，有两种；一种是成品（pre-made），一种是定制。对于成品，使用它一般有如下几步：
+
+1. Write one or more dataset importing functions
+2. Define the feature columns.
+3. Instantiate the relevant pre-made Estimator.
+4. Call a training, evaluation, or inference method.
+
+
+我们下面来试用一下一个新的estimator，它用于分类。
+</pre>

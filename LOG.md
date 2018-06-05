@@ -2,6 +2,15 @@
 
 
 
+
+# REf
+
+so many dataset:
+https://www.kaggle.com/datasets
+
+
+
+
 # 关于CNN
 
 https://www.tensorflow.org/api_docs/python/tf/layers/conv2d

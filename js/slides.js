@@ -23,8 +23,7 @@ var slidePages = [
     "slides/c20/s12-what.html",
     "slides/c20/s13-what.html",
     "slides/c20/s14-what.html",
-    "slides/c20/s20-what.html",
-    "slides/c20/s30-what.html"
+    "slides/c20/s20-what.html"
   ],
   ["slides/c30/s10-why.html",
     "slides/c30/s20-why.html",
