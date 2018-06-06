@@ -1,0 +1,30 @@
+
+
+<a href="http://58.241.217.181:15111/notebooks/work/ml/gnt-a/notebooks/code/gnt-C.ipynb" target="=_blank"> <h1>数据的读入</h1></a>
+
+<div class="row">
+
+  <div class="col-md-6">
+    <p>
+      上面直接读出的，是一个pixel 3个字节（RGB？）。使用skimage库中的imread，来读出图片文件中的内容。
+      from skimage.io import imread, imsave
+      ...
+      images_rgb = [imread(file_name) for file_name in image_names]
+      ```
+      然后，是对图片进行统一大小的处理：
+      IMAGE_SIZE = 64
+      ...
+      image_resized = [resize(image, (IMAGE_SIZE, IMAGE_SIZE)) for image in images_rgb]
+      即，字对应的图，大小是不一的，目前统一成64*64；这个可能会引出精度下降的问题。
+
+      然后，是将图片变为灰度图：
+      self.images = [rgb2gray(item) for item in image_resized]
+
+
+
+    </p>
+  </div>
+  <div class="col-md-6">
+    <img style="width:50%;" src="../../images/c60/input-data.png">
+  </div>
+</div>

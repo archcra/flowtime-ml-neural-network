@@ -53,6 +53,9 @@ var slidePages = [
     "slides/c60/s30-in-action.html",
     "slides/c60/s40-in-action.html",
     "slides/c60/s50-in-action.html",
+    "slides/c60/s51-in-action.html",
+    "slides/c60/s52-in-action.html",
+    "slides/c60/s53-in-action.html",
     "slides/c60/s60-in-action.html",
     "slides/c60/s70-in-action.html",
     "slides/c60/s80-in-action.html",
@@ -71,7 +74,7 @@ var slidePages = [
     "slides/c80/s80-question.html"
   ],
   ["slides/c90/s10-references.html",
-  "slides/c90/s15-references.html",
+    "slides/c90/s15-references.html",
     "slides/c90/s20-references.html"
   ],
   ["slides/ca0/s10-bye.html"]

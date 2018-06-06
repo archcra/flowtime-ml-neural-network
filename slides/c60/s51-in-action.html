@@ -1,0 +1,60 @@
+
+
+<a href="http://58.241.217.181:15111/notebooks/work/ml/gnt-a/notebooks/code/gnt-C.ipynb" target="=_blank"> <h1>学习</h1></a>
+
+<div class="row">
+
+  <div class="col-md-6">
+    <h2> 准备环境　</p>
+<pre><code class="language-javascript">import tensorflow as tf
+import numpy as np
+import os
+import random
+from numpy import array
+
+from skimage.io import imread, imsave
+from skimage.color import rgb2gray
+from skimage.transform import resize
+
+IMAGE_SIZE = 64
+# CHARSET_SIZE = 3755
+CHARSET_SIZE = 37
+</code></pre>
+
+
+
+
+    </p>
+  </div>
+  <div class="col-md-6"  style="margin-top:-3em;">
+    <h2> 定义输入　</p>
+
+    <pre><code class="language-javascript">def input(dataset):
+        return dataset.images, dataset.labels
+
+    class DataSetLoader:
+        def __init__(self, data_dir):
+            # Set FLAGS.charset_size to a small value if available computation power is limited.
+            truncate_path = data_dir + ('%05d' % CHARSET_SIZE)
+            print('Now processing path: ', truncate_path)
+            image_names = []
+            for root, sub_folder, file_list in os.walk(data_dir):
+                if root < truncate_path:
+                    image_names += [os.path.join(root, file_path) for file_path in file_list]
+            random.shuffle(image_names)
+            self.labels = [int(file_name[len(data_dir):].split(os.sep)[0]) for file_name in image_names]
+            images_rgb = [imread(file_name) for file_name in image_names]
+            image_resized = [resize(image, (IMAGE_SIZE, IMAGE_SIZE)) for image in images_rgb]
+            self.images = [rgb2gray(item) for item in image_resized]
+
+            # convert list to numpy array
+            self.images = array(self.images)
+            self.labels = array(self.labels)
+
+
+    train_data = DataSetLoader(data_dir='../data/train_/')
+    test_data = DataSetLoader(data_dir='../data/test_/')
+    print ('Data loaded ...')
+    </code></pre>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+
+
+<a href="http://58.241.217.181:15111/notebooks/work/ml/gnt-a/notebooks/code/gnt-E.ipynb" target="=_blank"> <h1>图形旋转与Gamma校正</h1></a>
+
+<div class="row">
+
+  <div class="col-md-6">
+
+
+<pre><code class="language-javascript">
+  from skimage.transform import rotate
+...
+
+images_rgb = [imread(file_name) for file_name in image_names]
+        image_resized = [resize(image, (IMAGE_SIZE, IMAGE_SIZE)) for image in images_rgb]
+        image_rotated = [rotate(image, np.random.random_sample()*90-45) for image in image_resized]
+        self.images = [rgb2gray(item) for item in image_rotated]
+</code></pre>
+
+</div>
+
+<div class="col-md-6">
+
+
+<pre><code class="language-javascript">
+  from skimage.exposure import adjust_gamma
+...
+  import numpy as np
+
+        def getRndGamma():
+            rnd1 = np.random.random_sample()
+            rnd2 = np.random.random_sample()+0.001
+            rnd3 = np.random.random_sample()*100
+
+            if (rnd1 < 1/3.0):
+                return rnd3
+            elif (rnd1 < 2/3.0):
+                return 1
+            else:
+                return rnd2
+
+        for i in range(10):
+            print ('Now gamma is --: ', getRndGamma())
+
+...
+            image_resized = [resize(image, (IMAGE_SIZE, IMAGE_SIZE)) for image in images_rgb]
+            image_gamma_adjusted = [adjust_gamma(image, getRndGamma()) for image in image_resized]
+            self.images = [rgb2gray(item) for item in image_gamma_adjusted]
+            </code></pre>
+          </div>
+        </div>

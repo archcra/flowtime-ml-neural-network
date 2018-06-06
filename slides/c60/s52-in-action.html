@@ -1,0 +1,44 @@
+
+
+<a href="http://58.241.217.181:15111/notebooks/work/ml/gnt-a/notebooks/code/gnt-C.ipynb" target="=_blank"> <h1>学习＃2</h1></a>
+
+<div class="row">
+
+  <div class="col-md-6">
+    <h2> 定义模型－两个隐藏层的DNN分类器　</p>
+<pre><code class="language-javascript"># Specify feature
+feature_columns = [tf.feature_column.numeric_column("x", shape=[IMAGE_SIZE, IMAGE_SIZE])]
+
+# Build 2 layer DNN classifier
+classifier = tf.estimator.DNNClassifier(
+    feature_columns=feature_columns,
+    hidden_units=[256, 32],
+    optimizer=tf.train.AdamOptimizer(1e-4),
+    n_classes=CHARSET_SIZE,
+    dropout=0.1,
+    model_dir="../dfs/checkpoint/dnn2_model"
+)
+</code></pre>
+
+
+
+
+    </p>
+  </div>
+  <div class="col-md-6">
+    <h2> 定义训练　</p>
+
+    <pre><code class="language-javascript"># Define the training inputs
+train_input_fn = tf.estimator.inputs.numpy_input_fn(
+    x={"x": input(train_data)[0]},
+    y=input(train_data)[1],
+    num_epochs=None,
+    batch_size=50,
+    shuffle=True
+)
+print ('Begin to train ...')
+classifier.train(input_fn=train_input_fn, steps=20000)
+print ('Train done ...')
+    </code></pre>
+  </div>
+</div>

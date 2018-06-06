@@ -1,0 +1,86 @@
+
+
+<a href="http://58.241.217.181:15111/notebooks/work/ml/gnt-a/notebooks/code/gnt-C.ipynb" target="=_blank"> <h1>学习＃2</h1></a>
+
+<div class="row">
+
+  <div class="col-md-6">
+    <h2> 定义测试－生成精度　</p>
+<pre><code class="language-javascript"># Define the test inputs
+test_input_fn = tf.estimator.inputs.numpy_input_fn(
+    x={"x": input(test_data)[0]},
+    y=input(test_data)[1],
+    num_epochs=1,
+    shuffle=False
+)
+
+# Evaluate accuracy
+accuracy_score = classifier.evaluate(input_fn=test_input_fn)["accuracy"]
+print("\nTest Accuracy: {0:f}%\n".format(accuracy_score*100))
+</code></pre>
+
+
+
+
+    </p>
+  </div>
+  <div class="col-md-6" style="margin-top:-4em;">
+    <h2> 定义训练　</p>
+
+    <pre><code class="language-javascript">Now processing path:  ../data/train_/00037
+Now processing path:  ../data/test_/00037
+Data loaded ...
+INFO:tensorflow:Using default config.
+INFO:tensorflow:Using config: {'_model_dir': '../dfs/checkpoint/dnn2_model', '_tf_random_seed': 1, '_save_summary_steps': 100, '_save_checkpoints_secs': 600, '_save_checkpoints_steps': None, '_session_config': None, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 100}
+Begin to train ...
+INFO:tensorflow:Create CheckpointSaverHook.
+INFO:tensorflow:Restoring parameters from ../dfs/checkpoint/dnn2_model/model.ckpt-42000
+INFO:tensorflow:Saving checkpoints for 42001 into ../dfs/checkpoint/dnn2_model/model.ckpt.
+INFO:tensorflow:loss = 101.934, step = 42001
+INFO:tensorflow:global_step/sec: 56.2474
+INFO:tensorflow:loss = 75.2733, step = 42101 (1.778 sec)
+INFO:tensorflow:global_step/sec: 57.2168
+INFO:tensorflow:loss = 70.2573, step = 42201 (1.747 sec)
+INFO:tensorflow:global_step/sec: 58.3131
+。。。
+INFO:tensorflow:loss = 54.7199, step = 61801 (1.775 sec)
+INFO:tensorflow:global_step/sec: 57.7332
+INFO:tensorflow:loss = 32.9856, step = 61901 (1.731 sec)
+INFO:tensorflow:Saving checkpoints for 62000 into ../dfs/checkpoint/dnn2_model/model.ckpt.
+INFO:tensorflow:Loss for final step: 44.7968.
+Train done ...
+INFO:tensorflow:Starting evaluation at 2018-06-05-12:03:52
+INFO:tensorflow:Restoring parameters from ../dfs/checkpoint/dnn2_model/model.ckpt-62000
+INFO:tensorflow:Finished evaluation at 2018-06-05-12:03:53
+INFO:tensorflow:Saving dict for global step 62000: accuracy = 0.850226, average_loss = 0.509221, global_step = 62000, loss = 62.521
+
+Test Accuracy: 85.022622%
+    </code></pre>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+90
+自定义　model:
+
+http://58.241.217.181:15111/notebooks/work/ml/gnt-a/notebooks/code/costomized-model-c.ipynb
+
+
+
+
+a0:
+完全自由发挥的自定义
+http://58.241.217.181:15111/notebooks/work/ml/gnt-a/notebooks/code/costomized-model-d.ipynb
+http://58.241.217.181:15111/notebooks/work/ml/gnt-a/notebooks/code/costomized-model-e.ipynb

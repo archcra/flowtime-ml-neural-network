@@ -1,0 +1,58 @@
+
+
+<a href="http://58.241.217.181:15111/notebooks/work/ml/gnt-a/notebooks/code/gnt-E.ipynb" target="=_blank"> <h1>提高精度</h1></a>
+
+<div class="row">
+
+  <div class="col-md-6">
+<pre>
+前面的D，我们学习了37个手写汉字。虽然调整了那个Nerual network的DNN参数，将它们设置为了一样，但是，精度达到80%左右时，就不再提高了。即使后来训练了20多万次，也没什么提高。目前考虑有3种解决方案：
+
+加入validation data (从train中取，还是从test中取？）
+对输入的train 数据进行预处理，做翻转、左右、上下平移处理。（加上亮度、透明度处理？）
+将DNN改为CNN
+理论上讲，应该加上validation。这就象学习后，加入一些小考，然后才是大考。干学不校正，是有问题的。很容易发生过拟合，变成书呆子，适应不了test数据。
+
+
+增加层数与参数：
+hidden_units=[4096, 4096, 4096, 4096, 4096, 4096], # 6 hidden layers
+</pre>
+
+
+<pre><code class="language-javascript"># Build 8 layer DNN classifier
+classifier = tf.estimator.DNNClassifier(
+    feature_columns=feature_columns, # The input features to our model
+    hidden_units=[4096, 4096, 4096, 4096, 4096, 4096], # 6 hidden layers
+    n_classes=CHARSET_SIZE, # survived or not {1, 0}
+    model_dir="../dfs/checkpoint/dnn8_model_a", # Path to where checkpoints etc are stored
+    optimizer=tf.train.RMSPropOptimizer(
+        learning_rate=0.00001),
+    dropout=0.1)
+    </code></pre>
+</div>
+<div class="col-md-6">
+
+<h2>手工测试时，显示图形：</h2>
+
+<pre><code class="language-javascript"># manually test
+predictions = list(model_from_checkpoint.predict(input_fn=predict_input_fn))
+predictions_value_array = list(predictions)
+
+import matplotlib.pyplot as plt
+
+def test_n_hanzi(predictions_values, index):
+    # Show the image of the input data
+    image_data_array = test_data.images[index]
+    image_data = image_data_array.reshape((IMAGE_SIZE, IMAGE_SIZE))
+    plt.imshow(image_data)
+    plt.show()
+
+    # show the prediction result
+    print ('Prediction label is: ', np.argmax(predictions_values[index]["probabilities"]))
+
+    # Show the lable
+    print ("Real label is: %d"%(test_data.labels[index]))
+
+for i in range(37):
+    test_n_hanzi(predictions_value_array, i)
+</code></pre>
